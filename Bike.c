@@ -55,7 +55,7 @@ eBike* bicicletas_newParams(
         if(
             !(!bicicletas_setId(newBike,id) &&
               !bicicletas_setNombre(newBike,nombre) &&
-              !bicicletas_getTipo(newBike,tipo) &&
+              !bicicletas_setTipo(newBike,tipo) &&
               !bicicletas_setTiempo(newBike,tiempo)
              ))
         {
@@ -120,7 +120,7 @@ int bicicletas_setTipo(eBike* this,char* tipo)
 {
     int error = -1;
 
-    if(this != NULL && tipo != NULL && validations_isValidType(tipo))
+    if(this != NULL && tipo != NULL /*&& validations_isValidType(tipo)*/)
     {
         strcpy(this->tipo, tipo);
         error = 0;
@@ -162,4 +162,36 @@ int bicicletas_getTiempo(eBike* this,int* tiempo)
         error = 0;
     }
     return error;
+}
+
+int bicicletas_combArarPorTipoYTiempo(void* bicicletaA, void* bicicletaB)
+{
+    int retorno = 0;
+    int comopararPorTipo;
+    eBike* bA;
+    eBike* bB;
+
+    if(bicicletaA != NULL && bicicletaB != NULL)
+    {
+        bA = bicicletaA;
+        bB = bicicletaB;
+
+        comopararPorTipo = strcmp(bA->nombre, bB->nombre);
+
+        // Si el strcmp por nombre dio diferente a 0 (osea que hay diferencia) entonces devuelvo esa diferencia
+        if (comopararPorTipo != 0)
+        {
+            retorno = comopararPorTipo;
+        }
+        else if (comopararPorTipo == 0 && bA->tiempo < bB->tiempo)  // si los nombres son iguales, puedo empezar a ordenar por likes.
+        {
+            retorno = -1; // esto quizas son al reves (este 1 y el otro -1)
+        }
+        else if (comopararPorTipo == 0 && bA->tiempo > bB->tiempo)
+        {
+            retorno = 1; // esto quizas son al reves (este -1 y el otro 1)
+        }
+    }
+
+    return retorno;
 }

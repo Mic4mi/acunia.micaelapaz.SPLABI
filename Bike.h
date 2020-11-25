@@ -29,4 +29,6 @@ int bicicletas_getTipo(eBike* this,char* tipo);
 
 int bicicletas_setTiempo(eBike* this,int tiempo);
 int bicicletas_getTiempo(eBike* this,int* tiempo);
+
+int bicicletas_combArarPorTipoYTiempo(void* bicicletaA, void* bicicletaB);
 #endif // BIKE_H_INCLUDED
