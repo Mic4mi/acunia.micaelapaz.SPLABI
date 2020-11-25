@@ -20,6 +20,53 @@ eBike* bicicleta_new()
     return nueva;
 }
 
+eBike* bicicletas_newParams(
+    char* idAsChar,
+    char* nombre,
+    char* tipo,
+    char* tiempoAsChar)
+{
+    int id, tiempo, validId, validTiempo;
+
+    validId = validations_isValidNumber(idAsChar);
+    validTiempo = validations_isValidNumber(tiempoAsChar);
+
+    if(!validId || !validTiempo)
+    {
+        if(!validId)
+        {
+            printf("\nEl Id del post es invalido. Valor recibido: %s\n", idAsChar);
+        }
+        else if (!validTiempo)
+        {
+            printf("\nEl valor del tiempo del post es invalido. Valor recibido: %s\n", tiempoAsChar);
+        }
+
+        return NULL;
+    }
+
+    id = atoi(idAsChar);
+    tiempo = atoi(tiempoAsChar);
+
+    eBike* newBike = bicicleta_new();
+
+    if(newBike != NULL)
+    {
+        if(
+            !(!bicicletas_setId(newBike,id) &&
+              !bicicletas_setNombre(newBike,nombre) &&
+              !bicicletas_getTipo(newBike,tipo) &&
+              !bicicletas_setTiempo(newBike,tiempo)
+             ))
+        {
+            printf("\nOcurrio un problema al inicializar las propiedades de la bicicleta. La misma no sera creada.\n");
+            newBike = NULL;
+            free(newBike);
+        }
+    }
+    return newBike;
+}
+
 int bicicletas_setId(eBike* this,int id)
 {
     int error = -1;
@@ -97,7 +144,7 @@ int bicicletas_setTiempo(eBike* this,int tiempo)
 {
     int error = -1;
 
-    if(this != NULL && tiempo >= 50 && tiempo <= 120)
+    if(this != NULL && tiempo >= 0 && tiempo <= 120)
     {
         this->tiempo = tiempo;
         error = 0;

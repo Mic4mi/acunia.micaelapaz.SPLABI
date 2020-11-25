@@ -10,6 +10,14 @@ typedef struct
     int  tiempo;
 }eBike;
 
+eBike* bicicleta_new();
+
+eBike* bicicletas_newParams(
+    char* idAsChar,
+    char* nombre,
+    char* tipo,
+    char* tiempoAsChar);
+
 int bicicletas_setId(eBike* this,int id);
 int bicicletas_getId(eBike* this,int* id);
 
