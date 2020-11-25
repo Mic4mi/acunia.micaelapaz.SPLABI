@@ -124,15 +124,18 @@ int validations_isValidEdad(char* edad)
     return 0;
 }
 
-int validations_isValid_IDDueno(char* idDueno)
+int validations_isValidType(char* type)
 {
-    int resultadoValido = validations_isValidNumber(idDueno);
-    int intID;
-
-    if(resultadoValido == 1)
+    int len = strlen(type);
+    if(len < 50 && len > 0)
     {
-        intID = atoi(idDueno);
-        if(intID >= 1 && intID <= 95)
+        strupr(type);
+        if(
+            strcmp(type, "BMX") == 0 ||
+            strcmp(type, "PLAYERA") == 0 ||
+            strcmp(type, "MTB") == 0 ||
+            strcmp(type, "PASEO") == 0
+        )
         {
             return 1;
         }
@@ -140,4 +143,3 @@ int validations_isValid_IDDueno(char* idDueno)
 
     return 0;
 }
-

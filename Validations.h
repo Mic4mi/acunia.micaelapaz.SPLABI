@@ -70,7 +70,7 @@ void validations_formatStr(char* str);
  int validations_isValidEdad(char* edad);
 
 
-
+int validations_isValidType(char* type);
 
 #endif // VALIDATIONS_H_INCLUDED
 

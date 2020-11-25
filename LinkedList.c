@@ -605,26 +605,32 @@ LinkedList* ll_filter(LinkedList* this, int (*pFunc)(void*))
  * \return return [0]
  *
  */
-int ll_map(LinkedList* lista,int (*pFunc)(void*))
+LinkedList* ll_map(LinkedList* lista,int (*pFunc)(void*))
 {
-    int error = -1;
     int len = ll_len(lista);
+    LinkedList* mappedArray = NULL;
     void* pElement = NULL;
 
     if(lista != NULL && pFunc != NULL)
     {
+        mappedArray = ll_clone(lista);
 
-        for(int i = 0; i < len; i++)
+        if(mappedArray != NULL)
         {
-            pElement = ll_get(lista,i);
-            if(pElement != NULL)
+            for(int i = 0; i < len; i++)
             {
-                pFunc(pElement);
+                pElement = ll_get(lista,i);
+                if(pElement != NULL)
+                {
+                    if(!pFunc(pElement))
+                    {
+                        ll_add(mappedArray,pElement);
+                    }
+                }
             }
         }
 
-        error = 0;
     }
 
-    return error;
+    return mappedArray;
 }
