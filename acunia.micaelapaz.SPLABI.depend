@@ -1,0 +1,49 @@
+# depslib dependency file v1.0
+1606281523 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"Validations.h"
+	"Menu.h"
+	"LinkedList.h"
+
+1606280986 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1606280919 c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\linkedlist.h
+
+1606281211 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\validations.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"Validations.h"
+	"LinkedList.h"
+
+1606281211 c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\validations.h
+
+1606281340 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\parser.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<string.h>
+	"Parser.h"
+	"LinkedList.h"
+
+1606281299 c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\parser.h
+	"LinkedList.h"
+
+1606281524 c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\menu.h
+
+1606281524 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\menu.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"LinkedList.h"
+	"Menu.h"
+
