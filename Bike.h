@@ -30,5 +30,12 @@ int bicicletas_getTipo(eBike* this,char* tipo);
 int bicicletas_setTiempo(eBike* this,int tiempo);
 int bicicletas_getTiempo(eBike* this,int* tiempo);
 
-int bicicletas_combArarPorTipoYTiempo(void* bicicletaA, void* bicicletaB);
+int bicicletas_map(void* bicicleta);
+
+int bicicletas_filtrarBMX(void* bicicleta);
+int bicicletas_filtrarPlayera(void* bicicleta);
+int bicicletas_filtrarMTB(void* bicicleta);
+int bicicletas_filtrarPaseo(void* bicicleta);
+
+int bicicletas_compararPorTipoYTiempo(void* bicicletaA, void* bicicletaB);
 #endif // BIKE_H_INCLUDED

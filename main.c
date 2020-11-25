@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
+#include <time.h>
 #include "Validations.h"
 #include "Controller.h"
 #include "Menu.h"
@@ -9,10 +10,11 @@
 
 int main()
 {
+    srand (time(NULL));
     LinkedList* bicicletas = ll_newLinkedList();
-    //LinkedList* bicicletasConTiempo = NULL;
     char pathPrincipal[100];
     int opcion, seleccion;
+    int flagMap = 0;
 
     if(bicicletas == NULL)
     {
@@ -55,16 +57,57 @@ int main()
                 }
                 break;
             case 3:
-                printf("\nMantenimiento...\n");
+                if(!controller_mapPosteos(bicicletas))
+                {
+                    flagMap = 1;
+                    printf("\nOperacion exitosa\n");
+                }
+                else
+                {
+                    printf("\nNo se ha podido cargar el archivo.\n");
+                }
                 break;
             case 4:
-                printf("\nMantenimiento...\n");
+                if(!flagMap)
+                {
+                    printf("\nPrimero deben mapearse los posteos.\n");
+                    break;
+                }
+
+                if(!controller_filtrarBicicletas(bicicletas))
+                {
+                    printf("\nOperacion exitosa\n");
+                }
+                else
+                {
+                    printf("\nNo se ha podido cargar el archivo.\n");
+                }
                 break;
             case 5:
-                printf("\nMantenimiento...\n");
+                if(!flagMap)
+                {
+                    printf("\nPrimero deben mapearse los posteos.\n");
+                    break;
+                }
+
+                if(!controller_ordenarXTipoXTiempo(bicicletas))
+                {
+                    printf("\nOperacion exitosa\n");
+                }
+                else
+                {
+                    printf("\nNo se ha podido cargar el archivo.\n");
+                }
                 break;
             case 6:
-                printf("\nMantenimiento...\n");
+                if(!controller_saveAsText("bicicletasOrdenadas.csv",bicicletas))
+                {
+                    printf("\nOperacion exitosa\n");
+                }
+                else
+                {
+                    printf("\nNo se ha podido cargar el archivo.\n");
+                }
                 break;
             case 7:
                 ll_deleteLinkedList(bicicletas);

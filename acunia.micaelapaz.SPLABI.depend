@@ -1,15 +1,16 @@
 # depslib dependency file v1.0
-1606309511 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\main.c
+1606313884 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\main.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
 	<string.h>
+	<time.h>
 	"Validations.h"
 	"Controller.h"
 	"Menu.h"
 	"LinkedList.h"
 
-1606306134 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\linkedlist.c
+1606311278 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\linkedlist.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -27,7 +28,7 @@
 
 1606306650 c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\validations.h
 
-1606309230 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\parser.c
+1606309806 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\parser.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -39,18 +40,18 @@
 	<stdio.h>
 	"LinkedList.h"
 
-1606309375 c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\menu.h
+1606313756 c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\menu.h
 	"LinkedList.h"
 	"Bike.h"
 
-1606309366 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\menu.c
+1606313755 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\menu.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	<ctype.h>
 	"Menu.h"
 
-1606309475 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\controller.c
+1606314138 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\controller.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
@@ -60,17 +61,18 @@
 	"Menu.h"
 	"Validations.h"
 
-1606309523 c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\controller.h
+1606313896 c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\controller.h
 	"LinkedList.h"
 
-1606309340 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\bike.c
+1606313689 source:c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\bike.c
 	<stdio.h>
 	<stdlib.h>
 	<ctype.h>
 	<string.h>
+	<time.h>
 	"Validations.h"
 	"Bike.h"
 
-1606309338 c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\bike.h
+1606313574 c:\users\micae\onedrive\escritorio\utn\prog & lab\parcial laboratorio 2\acunia.micaelapaz.splabi\bike.h
 	"LinkedList.h"
 

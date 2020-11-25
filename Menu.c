@@ -48,9 +48,9 @@ int menu_imprimirBicicletas(LinkedList* pLLBicicletas)
     Node* currentNode = pLLBicicletas->pFirstNode;
 
     printf("_____________________________________________________________\n");
-    printf("                             BICICLETAS \n");
+    printf("                       BICICLETAS \n");
     printf("_____________________________________________________________\n");
-    printf("  ID        Nombre            TIPO                    TIEMPO    \n");
+    printf("  ID        Nombre                     TIPO           TIEMPO    \n");
     printf("_____________________________________________________________\n");
 
     while (currentNodeIndex < linkedListSize)
@@ -66,3 +66,17 @@ int menu_imprimirBicicletas(LinkedList* pLLBicicletas)
     return 0;
 }
 
+void menu_submenu_filter()
+{
+    system("cls");
+    printf("_____________________________________________________________\n");
+    printf("                       BICICLETAS \n");
+    printf("_____________________________________________________________\n");
+    printf("                       FILTRAR POR TIPO                    \n");
+    printf("_____________________________________________________________\n");
+    printf("1. BMX.\n");
+    printf("2. PLAYERA.\n");
+    printf("3. MTB.\n");
+    printf("4. PASEO.\n");
+    printf("5. Volver al menu principal.\n");
+}

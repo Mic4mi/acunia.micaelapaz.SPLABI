@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
+#include <time.h>
 #include "Validations.h"
 #include "Bike.h"
 
@@ -164,34 +165,123 @@ int bicicletas_getTiempo(eBike* this,int* tiempo)
     return error;
 }
 
-int bicicletas_combArarPorTipoYTiempo(void* bicicletaA, void* bicicletaB)
+int bicicletas_compararPorTipoYTiempo(void* bicicletaA, void* bicicletaB)
 {
     int retorno = 0;
-    int comopararPorTipo;
+    int compararXTipo;
     eBike* bA;
     eBike* bB;
 
     if(bicicletaA != NULL && bicicletaB != NULL)
     {
-        bA = bicicletaA;
-        bB = bicicletaB;
+        bA = (eBike*)bicicletaA;
+        bB = (eBike*)bicicletaB;
 
-        comopararPorTipo = strcmp(bA->nombre, bB->nombre);
+        compararXTipo = strcmp(bA->tipo, bB->tipo);
 
-        // Si el strcmp por nombre dio diferente a 0 (osea que hay diferencia) entonces devuelvo esa diferencia
-        if (comopararPorTipo != 0)
+        if (compararXTipo != 0)
         {
-            retorno = comopararPorTipo;
+            retorno = compararXTipo;
         }
-        else if (comopararPorTipo == 0 && bA->tiempo < bB->tiempo)  // si los nombres son iguales, puedo empezar a ordenar por likes.
+        else if (compararXTipo == 0 && bA->tiempo < bB->tiempo)
         {
-            retorno = -1; // esto quizas son al reves (este 1 y el otro -1)
+            retorno = -1;
         }
-        else if (comopararPorTipo == 0 && bA->tiempo > bB->tiempo)
+        else if (compararXTipo == 0 && bA->tiempo > bB->tiempo)
         {
-            retorno = 1; // esto quizas son al reves (este -1 y el otro 1)
+            retorno = 1;
+        }
+    }
+    return retorno;
+}
+
+int bicicletas_map(void* bicicleta)
+{
+    int retorno = -1;
+    eBike* bicicletaActual = NULL;
+    int tiempoAleatorio;
+
+    if(bicicleta != NULL)
+    {
+        bicicletaActual = (eBike*) bicicleta;
+
+        if(bicicletaActual != NULL)
+        {
+            //Calcular
+            tiempoAleatorio = rand()%(71)+50;
+            //Setear
+            bicicletas_setTiempo(bicicletaActual,tiempoAleatorio);
+            retorno = 0;
         }
     }
 
+    return retorno;
+}
+
+int bicicletas_filtrarBMX(void* bicicleta)
+{
+    int retorno = 0;
+    eBike* bike = NULL;
+
+    if(bicicleta != NULL)
+    {
+        bike = (eBike*) bicicleta;
+
+        if(strcmp(bike->tipo,"BMX") == 0)
+        {
+            retorno = 1;
+        }
+    }
+    return retorno;
+}
+
+int bicicletas_filtrarPlayera(void* bicicleta)
+{
+    int retorno = 0;
+    eBike* bike = NULL;
+
+    if(bicicleta != NULL)
+    {
+        bike = (eBike*) bicicleta;
+
+        if(strcmp(bike->tipo,"PLAYERA") == 0)
+        {
+            retorno = 1;
+        }
+    }
+    return retorno;
+}
+
+int bicicletas_filtrarMTB(void* bicicleta)
+{
+    int retorno = 0;
+    eBike* bike = NULL;
+
+    if(bicicleta != NULL)
+    {
+        bike = (eBike*) bicicleta;
+
+        if(strcmp(bike->tipo,"MTB") == 0)
+        {
+            retorno = 1;
+        }
+    }
+    return retorno;
+}
+
+int bicicletas_filtrarPaseo(void* bicicleta)
+{
+    int retorno = 0;
+    eBike* bike = NULL;
+
+    if(bicicleta != NULL)
+    {
+        bike = (eBike*) bicicleta;
+
+        if(strcmp(bike->tipo,"PASEO") == 0)
+        {
+            retorno = 1;
+        }
+    }
     return retorno;
 }
