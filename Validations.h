@@ -69,7 +69,12 @@ void validations_formatStr(char* str);
  */
  int validations_isValidEdad(char* edad);
 
-
+ /** \brief Valida que un tipo sea valida.
+ *
+ * \param Char* tipo
+ * \return Retorna [1] Si esta todo OK, [0] si hay errores
+ *
+ */
 int validations_isValidType(char* type);
 
 #endif // VALIDATIONS_H_INCLUDED
